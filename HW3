@@ -1,0 +1,33 @@
+#Python HW 3 Brant Kinzy
+#Guess the Number
+
+import random
+
+print("I'm thinking of a number from 1 to 1000. Try to guess my number! (Enter 0 to stop playing.)")
+
+# num = random.randint(1, 1000)
+num = 458
+
+guess = int(input("Please enter your guess: "))
+num_guess = 1
+a = 1 # empty meaning to create loop
+while a == 1: 
+    if guess > 1000 or guess < 0: # if guess is outside of range
+        print("Your guess must be between 1 to 1000.")
+        guess = int(input("Please enter your guess: "))
+        num_guess += 1
+    elif   num > guess and guess != 0: # if guess is too low
+        print("Your guess is too low.")
+        guess = int(input("Please enter your guess: "))
+        num_guess += 1
+    elif num < guess and guess != 0: # if guess is too high
+        print("Your guess is too high.")
+        guess = int(input("Please enter your guess: "))
+        num_guess += 1
+    elif num == guess: # if guess is right
+        print("That's correct! You win!")
+        print(f"You guessed my number in {num_guess} guesses.")
+        break
+    elif guess == 0:
+        print("Goodbye!")
+        break
